@@ -9,9 +9,7 @@ import com.devsuperior.dslist.dto.GameMinDTO;
 import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.repositories.GameRepository;
 
-
-//Pode ser @Component ou @Service - não a mesma coisa
-@Service 
+@Service
 public class GameService {
 	
 	@Autowired
@@ -19,6 +17,6 @@ public class GameService {
 
 	public List<GameMinDTO> findAll() {
 		List<Game> result = gameRepository.findAll();
-		return result.stream().map(x -> new  GameMinDTO(x)).toList();
-	}
+		return result.stream().map(x -> new GameMinDTO(x)).toList();
+	}		
 }
